@@ -1,7 +1,7 @@
 <h1>ユーザー作成</h1>
 
 <%= form_with(model:@user, local: true) do |form| %>
- <%= render 'errors' ,user:@user %>
+ <%= render 'shared/errors' ,object:@user %>
 
   <div class="field">
     <%= form.label :email%>

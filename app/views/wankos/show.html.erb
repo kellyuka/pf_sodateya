@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @wanko.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @wanko.picture_url %>
+</p>
+
+<%= link_to 'Edit', edit_wanko_path(@wanko) %> |
+<%= link_to 'Back', wankos_path %>

@@ -1,0 +1,29 @@
+<h1>Wankos</h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>ID</th>
+      <th>Name</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wankos.each do |wanko| %>
+      <tr>
+        <td><%= wanko.id %></td>
+        <td><%= wanko.name %></td>
+        <td><%= image_tag wanko.picture_url , size: '100x100'%></td>
+        <td><%= link_to 'Show', wanko %></td>
+        <td><%= link_to 'Edit', edit_wanko_path(wanko) %></td>
+        <td><%= link_to 'Destroy', wanko, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wanko', new_wanko_path %>
