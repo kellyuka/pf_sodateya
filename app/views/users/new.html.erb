@@ -1,0 +1,30 @@
+<h1>ユーザー作成</h1>
+
+<%= form_with(model:@user, local: true) do |form| %>
+ <%= render 'errors' ,user:@user %>
+
+  <div class="field">
+    <%= form.label :email%>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+      <%= form.label :password %><br />
+      <%= form.password_field :password %>
+  </div>
+  <div class="field">
+      <%= form.label :password_confirmation %><br />
+      <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', users_path %>
