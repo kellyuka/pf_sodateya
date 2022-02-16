@@ -41,6 +41,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave', '~> 2.0'
 gem 'sorcery'
 gem 'rails-i18n'
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
