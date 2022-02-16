@@ -1,0 +1,6 @@
+<h1><%=t('defaults.title.edit', item: Wanko.model_name.human)%></h1>      
+
+<%= render 'form', wanko: @wanko %>
+
+<%= link_to t('defaults.show'), @wanko %> |
+<%= link_to t('defaults.back'), wankos_path %>

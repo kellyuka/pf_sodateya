@@ -1,0 +1,31 @@
+ja:
+  defaults:
+    register: '登録'
+    show: '詳細'
+    edit: '編集'
+    destroy: '削除'
+    back: '戻る'
+    login: 'ログイン'
+    logout: 'ログアウト'
+    title:
+      new: "%{item}登録"
+      edit: "%{item}編集"
+      show: "%{item}詳細"
+      index: "%{item}一覧"
+    message:
+      created: "%{item}を作成しました。"
+      updated: "%{item}を更新しました。"
+      destroyed: "%{item}を削除しました。"
+      destroy_confirm: "%{item}を削除してもよろしいですか。"
+      error: 'エラーが発生しています。'
+  users:
+    new:
+      to_login_page: 'ログインページへ'
+  user_sessions:
+    new:
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      login: 'ログインしました。'
+    destroy:
+      logout: 'ログアウトしました。'

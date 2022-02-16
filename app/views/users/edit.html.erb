@@ -1,7 +1,7 @@
-<h1>ユーザー修正</h1>
+<h1><%=t('defaults.title.edit', item: User.model_name.human)%></h1>      
 
 <%= form_with(model: @user, local: true) do |form| %>
-   <%= render 'errors' ,user:@user %>
+   <%= render 'shared/errors' ,object:@user %>
   <div class="field">
     <%= form.label :email%>
     <%= form.text_field :email %>
@@ -16,5 +16,5 @@
     <%= form.submit %>
   </div>
 <% end %>
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('defaults.show'), @user %> |
+<%= link_to t('defaults.back'), users_path %>

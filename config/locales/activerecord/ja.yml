@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      wanko: 'わんこ'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        name: '名前'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+      wanko:
+        id: 'ID'
+        name: '名前'
+        picture: '画像'
+      submit:
+      create: 登録
+      submit: 保存する
+      update: 更新する
