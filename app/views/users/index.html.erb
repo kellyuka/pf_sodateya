@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>ユーザー一覧</h1>
+<h1><%=t('defaults.title.index', item: User.model_name.human)%></h1> 
 
 <table>
   <thead>
     <tr>
-      <th>Email</th>
-      <th>name</th>
+      <th><%=User.human_attribute_name(:email)%></th>
+      <th><%=User.human_attribute_name(:name)%></th>
       
       <th colspan="2"></th>
     </tr>
@@ -17,9 +15,9 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('defaults.show'), user %></td>
+        <td><%= link_to t('defaults.edit'), edit_user_path(user) %></td>
+        <td><%= link_to t('defaults.destroy'), user, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: User.model_name.human) } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to t('defaults.title.new', item: User.model_name.human), new_user_path %>

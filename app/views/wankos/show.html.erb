@@ -1,12 +1,18 @@
+<h1><%=t('defaults.title.show', item: Wanko.model_name.human)%></h1>      
 <p>
-  <strong>Name:</strong>
+  <strong><%=Wanko.human_attribute_name(:id)%>:</strong>
+  <%= @wanko.id %>
+</p>
+
+<p>
+  <strong><%=Wanko.human_attribute_name(:name)%>:</strong>
   <%= @wanko.name %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong><%=Wanko.human_attribute_name(:picture)%>:</strong>
   <%= image_tag @wanko.picture_url %>
 </p>
 
-<%= link_to 'Edit', edit_wanko_path(@wanko) %> |
-<%= link_to 'Back', wankos_path %>
+<%= link_to t('defaults.edit'), edit_wanko_path(@wanko) %> |
+<%= link_to t('defaults.back'), wankos_path %>

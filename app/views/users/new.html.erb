@@ -1,4 +1,4 @@
-<h1>ユーザー作成</h1>
+<h1><%=t('defaults.title.new', item: User.model_name.human)%></h1>      
 
 <%= form_with(model:@user, local: true) do |form| %>
  <%= render 'shared/errors' ,object:@user %>
@@ -25,6 +25,4 @@
     <%= form.submit %>
   </div>
 <% end %>
-
-
-<%= link_to 'Back', users_path %>
+<%= link_to t('defaults.back'), users_path %>
