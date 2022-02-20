@@ -108,6 +108,7 @@ restart.addEventListener('click', () => {
 	reset();
 })
 });
+//結果部分
 function js_kekka_Modal() {
 	var instance = M.Modal.getInstance($('#modal1'))
 	instance.open();

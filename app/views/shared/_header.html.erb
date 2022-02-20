@@ -1,0 +1,18 @@
+<!-- header-->
+<nav>
+<div class="nav-wrapper">
+  <div class="row">
+    <a href="/" class="brand-logo"><i class="material-icons">sunny</i>SODATEYA</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <% if logged_in?%>
+      <li><%= link_to "コレクション一覧", "" %></li>
+      <li><%= link_to "プロフィール", edit_user_path(current_user.id) %> </li>
+      <li><%= link_to "ログアウト", '/logout', method: :post %></li>
+    <% else %>
+      <li><%= link_to "ログイン", '/login', method: :get %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+</nav>
+<!--END header-->

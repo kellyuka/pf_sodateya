@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require materialize
+//= require add_materialize
+//= require games.js
 
 //= require rails-ujs
 //= require activestorage
 // require turbolinks
-//= require_tree .

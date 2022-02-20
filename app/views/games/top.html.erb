@@ -1,100 +1,105 @@
-<h1>そだてや</h1>
-<div>
-	<a>sodateyaへようこそ！</a>
-	<a>ライフを使ってわんちゃんを育てよう！</a>
-	<a>どんなわんちゃんになるかはあなたの育て方次第！？</a>
-	<a>たくさん遊んで、ぜひコンプリートしてね！</a>
-	<a>遊び方</a>
-		<li>気になるお世話ボタンを押してみよう！</li>
-		<li>お世話が終われば終了ボタンへ！</li>
-</div>
-<div>
-	<%=image_tag 'top_dog' %>  
-	<h3>ライフ<h3>
-	<p id="life-mark">❤️❤️❤️❤️❤️❤️❤️❤️</p>
+<div class="parallax-container">
+  <div class="container">
+		<div class="row">
+			<h1 class= "teal-text text-lighten-1">SODATEYA</h1>
+			<!-- 前半は幅、　後半は、はじまりの位置-->
+			<div class="col s8 push-s1">
+				<p>sodateyaへようこそ！</p>
+				<p>ライフを使ってわんちゃんを育てよう！</p>
+				<p>どんなわんちゃんになるかはあなたの育て方次第！？</p>
+				<p>たくさん遊んで、ぜひコンプリートしてね！</p>
+				<div class="right-align">
+					<h5>LIFE</h5>
+					<p id="life-mark">❤️❤️❤️❤️❤️❤️❤️❤️</p>
+				</div>
+			</div>
+			<div class="col push-s2">
+				<%=image_tag('top_dog', size:'300x300') %>
+			</div>	
+		</div>
+	</div> 
+	<div class="parallax"><img src="assets/nohara.jpeg"></div>
 </div>
 
 <div class= "osewas-wrapper" >
-	<div class= "container">
-		<div class= "osewas">
-			<div class="osewa">
-				<div class = "gohan">
-				<h2>ご飯</h2>
-				<div><%= image_tag('dogfood.png',class:"osewa-icon") %></div>
-				<button id = "js-gohan">あげる</button>
-				</div>
-			</div>
+    <div class= "container">
+        <div class= "osewas">
+            <div class="osewa">
+                <div class = "gohan">
+                <h2>ご飯</h2>
+                    <div><%= image_tag('dogfood.png',class:"osewa-icon") %></div>
+                    <button id = "js-gohan">あげる</button>
+                </div>
+            </div>
+            <div class="osewa">
+                <div class = "ohuro">
+                <h2>お風呂</h2>
+                    <div><%= image_tag('bath_dog.png',class:"osewa-icon") %></div>
+                    <button id = "js-ohuro">はいる</button>
+                </div>
+            </div>
+        
+            <div class="osewa">
+                <div class = "sanpo">
+                <h2>散歩</h2>
+                    <div><%= image_tag('sanpo_dog.png',class:"osewa-icon") %></div>
+                    <button id = "js-sanpo">いく</button>
+                </div>
+            </div>
 
-			<div class="osewa">
-				<div class = "ohuro">
-				<h2>お風呂</h2>
-				<div><%= image_tag('bath_dog.png',class:"osewa-icon") %></div>
-				<button id = "js-ohuro">はいる</button>
-				</div>
-			</div>
-
-			<div class="osewa">
-				<div class = "sanpo">
-				<h2>散歩</h2>
-				<div><%= image_tag('sanpo_dog.png',class:"osewa-icon") %></div>
-				<button id = "js-sanpo">いく</button>
-				</div>
-			</div>
-
-			<div class="osewa">
-				<div class = "sleep">
-				<h2>おやすみ</h2>
-				<div><%= image_tag('sleep_dog.png',class:"osewa-icon") %></div>
-				<button id = "js-sleep">ねる</button>
-			</div>
-		</div>
-	</div>
+            <div class="osewa">
+                <div class = "sleep">
+                    <h2>おやすみ</h2>
+                    <div><%= image_tag('sleep_dog.png',class:"osewa-icon") %></div>
+                    <button id = "js-sleep">ねる</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class= "contaier">
-	<div class = "osewa_finish">
-		<%= form_with(url:games_search_path,method: :get,remote:true)  do |f| %>
-			<%=f.hidden_field :gohan_data,id:"submit-gohan"%>
-			<%=f.hidden_field :ohuro_data,id:"submit-ohuro"%>
-			<%=f.hidden_field :sanpo_data,id:"submit-sanpo"%>
-			<%=f.hidden_field :sleep_data,id:"submit-sleep"%>
-		<!-- Modal Trigger -->
-		<%=f.submit "お世話" ,onclick:"js_kekka_Modal();" %>
-		<!-- Modal Trigger -->
-		<%end%>
-		</div>
-	</div>
+    <div class= "contaier">
+        <div class = "osewa_finish">
+            <%= form_with(url:games_search_path,method: :get,remote:true)  do |f| %>
+                <%=f.hidden_field :gohan_data,id:"submit-gohan"%>
+                <%=f.hidden_field :ohuro_data,id:"submit-ohuro"%>
+                <%=f.hidden_field :sanpo_data,id:"submit-sanpo"%>
+                <%=f.hidden_field :sleep_data,id:"submit-sleep"%>
+                <!-- Modal Trigger -->
+                <%=f.submit "お世話" ,onclick:"js_kekka_Modal();" %>
+                <!-- Modal Trigger -->
+            <%end%>
+        </div>
+    </div>
 </div>
 
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-	<div class="modal-content">
-		<h2>結果</h2>
-		<div class = "resultindex">
-			<p>ご飯をあげた回数</p>
-			<p id="gohan-result">0</p>
-		</div>
-		
-		<div class = "resultindex">
-			<p>お風呂に入った回数</p>
-			<p id="ohuro-result">0</p>
-		</div>
-		
-		<div class = "resultindex">
-			<p>散歩に行った回数</p>
-			<p id="sanpo-result">0</p>
-		</div>
-		
-		<div class = "resultindex">
-			<p>おやすみした回数</p>
-			<p id="sleep-result">0</p>
-		</div>
-		<div class = "kekka">
-			<p id = "kekka-detail"></p>
-		</div>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="modal-close waves-effect waves-green btn-flat"  id = "js-restart">もういちどする</a>
-	</div>
-</div>
+<!--<a href="#" onclick="js_kekka_Modal();">クリック</a>-->
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h2>結果</h2>
+            <div class = "resultindex">
+                <p>ご飯をあげた回数</p>
+                <p id="gohan-result">0</p>
+            </div>
+            <div class = "resultindex">
+                <p>お風呂に入った回数</p>
+                <p id="ohuro-result">0</p>
+            </div>
+            <div class = "resultindex">
+                <p>散歩に行った回数</p>
+                <p id="sanpo-result">0</p>
+            </div>
+            <div class = "resultindex">
+                <p>おやすみした回数</p>
+                <p id="sleep-result">0</p>
+            </div>
+                <div class = "kekka">
+        <p id = "kekka-detail"></p>
+            </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat"  id = "js-restart">もういちどする</a>
+    </div>
+  </div>
