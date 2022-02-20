@@ -13,6 +13,7 @@
 //= require materialize
 //= require add_materialize
 //= require games.js
+//= require jquery3
 
 //= require rails-ujs
 //= require activestorage
