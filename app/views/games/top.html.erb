@@ -1,8 +1,8 @@
 <div class="parallax-container">
-  <div class="container">
+    <div class="container">
 		<div class="row">
 			<h1 class= "teal-text text-lighten-1">SODATEYA</h1>
-			<!-- 前半は幅、　後半は、はじまりの位置-->
+			<!-- 前半は幅、後半は、はじまりの位置-->
 			<div class="col s8 push-s1">
 				<p>sodateyaへようこそ！</p>
 				<p>ライフを使ってわんちゃんを育てよう！</p>
@@ -14,63 +14,52 @@
 				</div>
 			</div>
 			<div class="col push-s2">
-				<%=image_tag('top_dog', size:'300x300') %>
+				<%=image_tag('top_dog', size:'200x200') %>
 			</div>	
 		</div>
+        <div class="row osewa">
+            <div class="col s2">
+                <img src="/assets/dogfood.png" alt="" class="col s20 responsive-img"> <!-- notice the "circle" class -->
+                <div class="right-align">
+                <button id ="js-gohan" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s2">
+                <img src="/assets/bath_dog.png" alt="" class="col s20 responsive-img"> <!-- notice the "circle" class -->
+                <div class="right-align">
+                <button id ="js-ohuro" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s2">
+                <img src="/assets/sanpo_dog.png" alt="" class="col s20 responsive-img"> <!-- notice the "circle" class -->
+                <div class="right-align">
+                <button id ="js-sanpo" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s2">
+                <img src="/assets/sleep_dog.png" alt="" class="col s20 responsive-img"> <!-- notice the "circle" class -->
+                <div class="right-align">
+                <button id ="js-sleep" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="finish valign-wrapper">
+                    <div class = "osewa_finish">
+                        <%= form_with(url:games_search_path,method: :get,remote:true)  do |f| %>
+                        <%=f.hidden_field :gohan_data,id:"submit-gohan"%>
+                        <%=f.hidden_field :ohuro_data,id:"submit-ohuro"%>
+                        <%=f.hidden_field :sanpo_data,id:"submit-sanpo"%>
+                        <%=f.hidden_field :sleep_data,id:"submit-sleep"%>
+                        <!-- Modal Trigger -->
+                        <%=f.submit "FINISH", onclick:"js_kekka_Modal();", class:"waves-effect waves-light btn-large blue-text text-darken-2" %>
+                        <%end%>
+                        <!-- Modal Trigger -->
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div> 
 	<div class="parallax"><img src="assets/nohara.jpeg"></div>
-</div>
-
-<div class= "osewas-wrapper" >
-    <div class= "container">
-        <div class= "osewas">
-            <div class="osewa">
-                <div class = "gohan">
-                <h2>ご飯</h2>
-                    <div><%= image_tag('dogfood.png',class:"osewa-icon") %></div>
-                    <button id = "js-gohan">あげる</button>
-                </div>
-            </div>
-            <div class="osewa">
-                <div class = "ohuro">
-                <h2>お風呂</h2>
-                    <div><%= image_tag('bath_dog.png',class:"osewa-icon") %></div>
-                    <button id = "js-ohuro">はいる</button>
-                </div>
-            </div>
-        
-            <div class="osewa">
-                <div class = "sanpo">
-                <h2>散歩</h2>
-                    <div><%= image_tag('sanpo_dog.png',class:"osewa-icon") %></div>
-                    <button id = "js-sanpo">いく</button>
-                </div>
-            </div>
-
-            <div class="osewa">
-                <div class = "sleep">
-                    <h2>おやすみ</h2>
-                    <div><%= image_tag('sleep_dog.png',class:"osewa-icon") %></div>
-                    <button id = "js-sleep">ねる</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div class= "contaier">
-        <div class = "osewa_finish">
-            <%= form_with(url:games_search_path,method: :get,remote:true)  do |f| %>
-                <%=f.hidden_field :gohan_data,id:"submit-gohan"%>
-                <%=f.hidden_field :ohuro_data,id:"submit-ohuro"%>
-                <%=f.hidden_field :sanpo_data,id:"submit-sanpo"%>
-                <%=f.hidden_field :sleep_data,id:"submit-sleep"%>
-                <!-- Modal Trigger -->
-                <%=f.submit "お世話" ,onclick:"js_kekka_Modal();" %>
-                <!-- Modal Trigger -->
-            <%end%>
-        </div>
-    </div>
 </div>
 
 <!--<a href="#" onclick="js_kekka_Modal();">クリック</a>-->

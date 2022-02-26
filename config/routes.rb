@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   post 'logout', to: 'user_sessions#destroy'
   resources :users
-  resources :wankos
+  resources :wankos do
+    resources :collections
+  end
 end
