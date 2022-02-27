@@ -1,0 +1,96 @@
+		<div class="row">
+			<h1 class= "teal-text text-lighten-1">SODATEYA</h1>
+			<!-- 前半は幅、後半は、はじまりの位置-->
+			<div class="col s11 l6 push-l1">
+				<p>sodateyaへようこそ！</p>
+				<p>ライフを使ってわんちゃんを育てよう！</p>
+				<p>どんなわんちゃんになるかはあなたの育て方次第！？</p>
+				<p>たくさん遊んで、ぜひコンプリートしてね！</p>
+            </div>	
+            <div class="col s12 l6">
+                <div class="center-align">
+                <%=image_tag 'top_dog', size:'250x250'%>
+                <h4>LIFE:<a id="life-mark">❤️❤️❤️❤️❤️❤️❤️❤️</a></h4>
+                </div>
+			</div>
+		</div>
+        <div class="row osewa">
+            <div class="col s3 l2">
+                <%=image_tag 'dogfood',size:"130x130"%>
+                <div class="col s2 offset-s5 ">
+                    <button id ="js-gohan" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s3 l2">
+                <%=image_tag 'bath_dog',size:"130x130"%>
+                <div class="col s2 offset-s5 ">
+                <button id ="js-ohuro" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s3 l2">
+                <%=image_tag 'sanpo_dog',size:"130x130"%>
+                <div class="col s2 offset-s5 ">
+                <button id ="js-sanpo" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s3 l2">
+                <%=image_tag 'sleep_dog',size:"130x130"%>
+                <div class="col s2 offset-s5 ">
+                <button id ="js-sleep" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <div class="finish center-align">
+                    <div class = "osewa_finish">
+                        <%= form_with(url:games_search_path,method: :get,remote:true)  do |f| %>
+                        <%=f.hidden_field :gohan_data,id:"submit-gohan"%>
+                        <%=f.hidden_field :ohuro_data,id:"submit-ohuro"%>
+                        <%=f.hidden_field :sanpo_data,id:"submit-sanpo"%>
+                        <%=f.hidden_field :sleep_data,id:"submit-sleep"%>
+                        <!-- Modal Trigger , class:"waves-effect waves-light btn-large"  -->
+                        <%=f.submit "FINISH" ,class:"btn-large"%>
+                        <%end%>
+                        <!-- Modal Trigger , onclick:"js_kekka_Modal();" -->
+                    </div>
+                </div>
+            </div>
+	</div>
+<!--<a href="#" onclick="js_kekka_Modal();">クリック</a>-->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row">
+            <h3>結果発表</h3>
+            <div class = "col s3 center-align">
+                <h5>ご飯をあげた数</h5>
+                <h5 id="gohan-result">0</h5>
+            </div>
+            <div class = "col s3 center-align">
+                <h5>お風呂に入った数</h5>
+                <h5 id="ohuro-result">0</h5>
+            </div>
+            <div class = "col s3 center-align">
+                <h5>散歩に行った数</h5>
+                <h5 id="sanpo-result">0</h5>
+            </div>
+            <div class = "col s3 center-align">
+                <h5>おやすみした数</h5>
+                <h5 id="sleep-result">0</h5>
+            </div>
+        </div>
+        <div id = "kekka-detail"></div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat"  id = "js-restart">もういちどする</a>
+    </div>
+  </div>
+<%= javascript_include_tag "games.js" %>

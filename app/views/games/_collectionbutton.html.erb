@@ -1,0 +1,6 @@
+<%=link_to wanko_collections_path(wanko),
+        id:"js-wanko-collection-button-#{wanko.id}",
+        method: :post,
+        remote: :true do %>
+        <button class="btn-large">コレクションへ</button>
+    <%end%>

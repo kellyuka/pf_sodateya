@@ -1,0 +1,7 @@
+@import "materialize/components/color-variables";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("green", "base") !default;
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "add_materialize";
+@import "game";

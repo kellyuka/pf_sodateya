@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       wanko: 'わんこ'
+      collection: 'コレクション'
     attributes:
       user:
         email: 'メールアドレス'
