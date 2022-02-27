@@ -1,28 +1,40 @@
 <h1><%=t('defaults.title.new', item: User.model_name.human)%></h1>      
-
-<%= form_with(model:@user, local: true) do |form| %>
- <%= render 'shared/errors' ,object:@user %>
-
-  <div class="field">
+<div class="row">
+  <%= form_with(model:@user, local: true) do |form| %>
+  <%= render 'shared/errors' ,object:@user %>
+  <div class="input-field">
     <%= form.label :email%>
-    <%= form.text_field :email %>
+    <%= form.text_field :email ,class:"validate"%>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  <div class="field">
-      <%= form.label :password %><br />
-      <%= form.password_field :password %>
-  </div>
-  <div class="field">
-      <%= form.label :password_confirmation %><br />
-      <%= form.password_field :password_confirmation %>
+
+  <div class="input-field">
+    <%= form.label :password %><br />
+    <%= form.password_field :password %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="input-field">
+    <%= form.label :password_confirmation %><br />
+    <%= form.password_field :password_confirmation %>
   </div>
-<% end %>
+  <br>
+  <div class="input-field center-align">
+  <%= form.submit class:"btn-large" %>
+  </div>
+  <% end %>
 <%= link_to t('defaults.back'), users_path %>
+</div>
+
+<a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
+
+  <!-- Tap Target Structure -->
+  <div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+      <h5>Title</h5>
+      <p>A bunch of text</p>
+    </div>
+  </div>

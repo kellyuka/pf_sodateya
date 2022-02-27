@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   def top
+    @wanko = Wanko.new
   end
 
   def search

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'logout', to: 'user_sessions#destroy'
   resources :users
   resources :wankos do
-    resources :collections
+    resources :collections, only: %i[create]
   end
+  resources :collections
 end

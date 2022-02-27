@@ -97,8 +97,7 @@ function reset(){
 	ohuro_result.innerHTML = 0;
 	sanpo_result.innerHTML = 0;
 	sleep_result.innerHTML = 0;
-	
-	$("#kekka-detail").empty();
+
 };
 
 //再表示

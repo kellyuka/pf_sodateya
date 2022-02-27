@@ -9,4 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
 //お世話ボタン
 	var elems = document.querySelectorAll('.fixed-action-btn');
 	var instances = M.FloatingActionButton.init(elems, {direction: 'left'});
+
+//ヘルプページ
+	var elems = document.querySelectorAll('.tap-target');
+	var instances = M.TapTarget.init(elems);
+
+	M.AutoInit();
 });

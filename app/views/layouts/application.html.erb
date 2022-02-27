@@ -10,15 +10,20 @@
   </head>
 
 <body>
-  <header>
+<header>
   <%= render 'shared/header'%> 
-  </header>
-  <main>
-  <%= render 'shared/flash_message'%>
-  <%= yield %>
-  </main>
-  <footer>
+</header>
+<main>
+  <div class="parallax-container">
+    <%= render 'shared/flash_message'%>
+    <div class="container">
+        <%= yield %>
+    </div>
+  <div class="parallax"><%=image_tag "nohara.jpeg"%></div>
+  </div>
+</main>
+<footer>
   <%= render 'shared/footer'%> 
-  </footer>
+</footer>
 </body>
 </html>

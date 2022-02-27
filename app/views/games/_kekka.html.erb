@@ -1,11 +1,15 @@
-<p>つまりあなたのわんちゃんは...</p>
-<p><%=wanko.name%></p>
-<%= image_tag wanko.picture_url , size: '100x100'%>
-<%if logged_in?%>
-    <%if current_user.collection?(wanko)%>
-        <%=render 'nocollectionbutton', wanko:wanko%>  
+<div id = "kekka-detail" class="center-align">
+    <br>
+    <p>つまりあなたのわんちゃんは...</p>
+    <h4><%=@wanko.name%></h4>
+    <%= image_tag @wanko.picture_url , size: '200x200'%>
+    <br>
+    <%if logged_in?%>
+        <%if current_user.collection?(@wanko)%>
+            <%=render 'nocollectionbutton', wanko:@wanko%>  
+        <%else%>
+            <%=render 'collectionbutton', wanko:@wanko%>
+        <%end%>
     <%else%>
-        <%=render 'collectionbutton', wanko:wanko%>
     <%end%>
-<%else%>
-<%end%>   
+</div>
