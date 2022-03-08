@@ -14,6 +14,8 @@ main {
 .card-content {
 	background-image: url("frame_hyousyoujyou.jpeg");
 	background-position: center;
-
-
+}
+.page-footer a {
+	@extend .grey-text;
+	@extend .text-lighten-3;
 }

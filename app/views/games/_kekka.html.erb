@@ -9,7 +9,10 @@
         <%else%>
             <%=render 'collectionbutton', wanko:@wanko%>
         <%end%>
-        
+        <br>
+        <%=link_to "https://twitter.com/share?url=#{request.url}/&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank' do %>
+        <i class="fa fa-twitter"></i><%="twitterでシェアする"%>
+        <%end%>
     <%else%>
         <%= link_to "コレクションを始める？",login_path ,class:"btn"%>
     <%end%>
