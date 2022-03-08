@@ -1,1 +1,7 @@
 <button id="js-wanko-already_collection-button-#{wanko.id}" class="btn-large disabled">コレクション済</button>
+<%if current_user.collections.count < 9%>
+	<p>あと<%=9-current_user.collections.count%>種類だよ！頑張って！</p>
+<%elsif current_user.collections.count == 9%>
+	<%=link_to "表彰式へ",games_sugosugi_path, class:"btn-large"%>
+<%else%>
+<%end%>

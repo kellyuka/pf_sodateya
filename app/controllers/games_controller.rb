@@ -26,7 +26,7 @@ class GamesController < ApplicationController
     end
   end
 
-  def complete
+  def sugosugi
     @collections = current_user.collections
     @wanko = Wanko.find(10)
   end

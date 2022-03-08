@@ -86,5 +86,17 @@
         <button class="modal-close waves-effect waves-green btn-flat"  id = "js-restart">もういちどする</button>
     </div>
 </div>
-
+<div class="fixed-action-btn" onclick="btn1();">
+    <a id="menu" class="btn-large btn-floating waves-effect waves-light"><i class="material-icons">help</i></a>
+</div>
+<div class="tap-target light-green lighten-2" data-target="menu">
+    <div class="tap-target-content">
+        <div class= "row teal-text text-darken-4">
+        <h5 class= "col s12 offset-s3 offset-l1">遊び方</h5>
+        <p>1.好きなお世話ボタン＋を押してね</p>
+        <p>2.お世話が終わったらお世話を終えるを押してね</p>
+        <p>3.ライフを使い切る必要はないんだ</p>
+        </div>
+    </div>
+</div>
 <%= javascript_include_tag "games.js" %>

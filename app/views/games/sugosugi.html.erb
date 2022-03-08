@@ -1,0 +1,33 @@
+<div class="center-align">
+	<h1 class= "light-green-text">
+	<i class="large material-icons">local_florist</i>
+	表 彰 式
+	<i class="large material-icons">local_florist</i>
+	</h1>
+	<% @collections.each do |collection| %>
+	<%= image_tag collection.wanko.picture_url , size: '100x100'%> 
+	<%end%>
+	<div class="row">
+		<div class="card col s8 offset-s2">
+			<div class="card-content teal-text text-darken-4">
+				<h4>表彰状</h4>
+				<h5>あなたは全てコンプリートしました。</h5>
+				<h5>よってここに表彰します。</h5>
+				<h4><%= @wanko.name %></h4>
+				<%= image_tag @wanko.picture_url , size: '200x200'%> 
+				<br>
+				<%if current_user.collection?(@wanko)%>
+					<p><%=render 'nocollectionbutton', wanko:@wanko%></p>
+				<%else%>
+					<%=render 'collectionbutton', wanko:@wanko%>
+				<%end%>
+				<br>
+			</div>
+		</div>
+	</div>
+<h5>作成者より</h5>
+<p>ここまで遊んでいただき、誠にありがとうございます。</p>
+<p>きっとPF作成しているRUNTEQの人が多いと思うので</p>
+<p>kellyまで申し付けください。全力で私も使います</p>
+<p>ありがとうございました！</p>
+</div>

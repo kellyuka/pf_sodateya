@@ -10,6 +10,6 @@ class CollectionsController < ApplicationController
   end
 
   def index
-    @collections= current_user.collections
+    @collections = current_user.collections.order(wanko_id: :asc)
   end
 end

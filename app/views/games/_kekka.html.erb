@@ -1,5 +1,4 @@
 <div id = "kekka-detail" class="center-align">
-    <br>
     <p>つまりあなたのわんちゃんは...</p>
     <h4><%=@wanko.name%></h4>
     <%= image_tag @wanko.picture_url , size: '200x200'%>
@@ -10,6 +9,8 @@
         <%else%>
             <%=render 'collectionbutton', wanko:@wanko%>
         <%end%>
+        
     <%else%>
+        <%= link_to "コレクションを始める？",login_path ,class:"btn"%>
     <%end%>
 </div>

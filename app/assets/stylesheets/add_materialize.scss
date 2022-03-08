@@ -10,12 +10,10 @@ main {
 	background-image: url("nohara.jpg");
 	background-size: cover;
           }
-//背景画像用
-.back-container {
-	//height:;
-}
-.parallax-container .container{
-	//height: 700px;
-	//min-height: 100px;
+//表彰状カード
+.card-content {
+	background-image: url("frame_hyousyoujyou.jpeg");
+	background-position: center;
+
 
 }
