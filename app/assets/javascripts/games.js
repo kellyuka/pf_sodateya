@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-console.log("DOMContentLoaded")
 
 //お世話ボタン
 const gohan = document.getElementById("js-gohan");
@@ -33,7 +32,7 @@ function life_counter(){
 gohan.addEventListener('click', () => {
 	if (sum_count.count > 0) {
 		sum_count.count--;
-		life_mark.innerHTML = life_mark.innerHTML.slice(2);
+		life_mark.innerHTML = life_mark.innerHTML.slice(9);
 		submit_gohan.value++;
 		gohan_result.innerHTML = submit_gohan.value;
 	}else {
@@ -46,7 +45,7 @@ ohuro.addEventListener('click', () => {
 	submit_ohuro.value++;
 	ohuro_result.innerHTML = submit_ohuro.value;
 	sum_count.count--;
-	life_mark.innerHTML = life_mark.innerHTML.slice(2);
+	life_mark.innerHTML = life_mark.innerHTML.slice(9);
 	}else {
 	life_counter();
 };
@@ -57,7 +56,7 @@ sanpo.addEventListener('click', () => {
 	submit_sanpo.value++;
 	sanpo_result.innerHTML = submit_sanpo.value;
 	sum_count.count--;
-	life_mark.innerHTML = life_mark.innerHTML.slice(2);
+	life_mark.innerHTML = life_mark.innerHTML.slice(9);
 }else {
 	life_counter();
 };
@@ -68,7 +67,7 @@ sleep.addEventListener('click', () => {
 	submit_sleep.value++;
 	sleep_result.innerHTML = submit_sleep.value;
 	sum_count.count--;
-	life_mark.innerHTML = life_mark.innerHTML.slice(2);
+	life_mark.innerHTML = life_mark.innerHTML.slice(9);
 }else {
 	life_counter();
 };
@@ -89,26 +88,22 @@ function reset(){
 	submit_ohuro.value = 0;
 	submit_sanpo.value = 0;
 	submit_sleep.value = 0;
-	
 	sum_count.count = 8;
-	life_mark.innerHTML = "❤️❤️❤️❤️❤️❤️❤️❤️"
-	
+	life_mark.innerHTML = "favorite favorite favorite favorite favorite favorite favorite favorite"
 	gohan_result.innerHTML = 0;
 	ohuro_result.innerHTML = 0;
 	sanpo_result.innerHTML = 0;
 	sleep_result.innerHTML = 0;
-
 };
 
 //再表示
 const restart = document.getElementById("js-restart");
-
 restart.addEventListener('click', () => {
 	reset();
 })
 });
 //結果部分
 function js_kekka_Modal() {
-	var instance = M.Modal.getInstance($('#modal1'))
+	const instance = M.Modal.getInstance($('#kekka-modal'))
 	instance.open();
-}	
+}

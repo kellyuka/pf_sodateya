@@ -1,8 +1,10 @@
 <!-- header-->
 <nav>
-<div class="nav-wrapper">
+<div class="nav-wrapper ">
   <div class="row">
-    <a href="/" class="brand-logo"><i class="material-icons">sunny</i>SODATEYA</a>
+  <div class="col offset-s1">
+    <a href="/" class=" brand-logo "><i class="material-icons">sunny</i>S O D A T E Y A</a>
+  </div>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
     <% if logged_in?%>
       <li><%= link_to "コレクション一覧", collections_path %></li>

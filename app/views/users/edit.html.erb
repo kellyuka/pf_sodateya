@@ -1,20 +1,33 @@
-<h1><%=t('defaults.title.edit', item: User.model_name.human)%></h1>      
+<h1 class= "teal-text text-lighten-1 valign-wrapper">
+  <i class="medium material-icons">accessibility</i>
+  <%=t('defaults.title.edit', item: User.model_name.human)%> 
+</h1>      
 
-<%= form_with(model: @user, local: true) do |form| %>
+<%= form_with(model: @user, local: true) do |f| %>
    <%= render 'shared/errors' ,object:@user %>
-  <div class="field">
-    <%= form.label :email%>
-    <%= form.text_field :email %>
+    <div class="input-field">
+    <%= f.label :email%>
+    <%= f.text_field :email %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="input-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="input-field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+<br>
+  <div class="input-field center-align">
+    <%= f.submit  class:"btn-large" %>
   </div>
 <% end %>
-<%= link_to t('defaults.show'), @user %> |
-<%= link_to t('defaults.back'), users_path %>
+
+<%= link_to t('defaults.back'), users_path ,class:"btn  blue-grey" %>

@@ -1,4 +1,7 @@
-<h1><%=t('defaults.title.new', item: User.model_name.human)%></h1>      
+<h1 class= "teal-text text-lighten-1 valign-wrapper">
+  <i class="medium material-icons">account_circle</i>
+  <%=t('defaults.title.new', item: User.model_name.human)%>
+</h1>      
 <div class="row">
   <%= form_with(model:@user, local: true) do |form| %>
   <%= render 'shared/errors' ,object:@user %>
@@ -13,28 +16,21 @@
   </div>
 
   <div class="input-field">
-    <%= form.label :password %><br />
+    <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
 
   <div class="input-field">
-    <%= form.label :password_confirmation %><br />
+    <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>
   </div>
+  
   <br>
   <div class="input-field center-align">
   <%= form.submit class:"btn-large" %>
   </div>
   <% end %>
-<%= link_to t('defaults.back'), users_path %>
+  <%= link_to t('defaults.back'), users_path,class:"btn blue-grey" %>
 </div>
-
-<a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
-
-  <!-- Tap Target Structure -->
-  <div class="tap-target" data-target="menu">
-    <div class="tap-target-content">
-      <h5>Title</h5>
-      <p>A bunch of text</p>
-    </div>
-  </div>
+<a id="scale-demo-trigger" href="#!" class="btn right">Toggle Scale</a>
+<a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition"><i class="material-icons">add</i></a>

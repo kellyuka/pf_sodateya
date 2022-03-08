@@ -1,3 +1,23 @@
-.finish {
-            margin-top: 80px;
+.osewa_finish {
+            height: 170px;
+}
+
+.osewa {
+            @extend .col;
+            @extend .s3;
+            @extend .l2;
+}
+.osewa-content {
+            @extend .right-align;
+            //@extend .valign-wrapper;
+            a {
+                        font-size: 24px;
+                        @extend .teal-text; 
+                        @extend .text-darken-4;
+            }
+}
+.kekka {
+            @extend .col;
+            @extend .s3;
+            @extend .center-align;
 }

@@ -1,11 +1,11 @@
-<h1><%=t('defaults.title.index', item: User.model_name.human)%></h1> 
-
+<h1 class= "teal-text text-lighten-1 valign-wrapper">
+  <i class="medium material-icons">people</i><%="遊んでくれた人たち"%>
+</h1> 
 <table>
   <thead>
     <tr>
-      <th><%=User.human_attribute_name(:email)%></th>
       <th><%=User.human_attribute_name(:name)%></th>
-      
+      <th><%="コレクション数"%></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -13,16 +13,21 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
         <td><%= user.name %></td>
-        <td><%= link_to t('defaults.show'), user %></td>
+        <td><%= user.collections.count %>回</td>
+        <%
+=begin%>
+ <td><%= link_to t('defaults.show'), user %></td>
         <td><%= link_to t('defaults.edit'), edit_user_path(user) %></td>
-        <td><%= link_to t('defaults.destroy'), user, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: User.model_name.human) } %></td>
+        <td><%= link_to t('defaults.destroy'), user, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: User.model_name.human) } %></td> 
+<%
+=end%>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to t('defaults.title.new', item: User.model_name.human), new_user_path %>
+<div class="center-align">
+  <%= link_to t('defaults.login'), '/login', method: :get, class:"btn-large"%>
+</div>

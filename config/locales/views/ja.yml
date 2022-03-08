@@ -1,6 +1,6 @@
 ja:
   defaults:
-    register: '登録'
+    register: '登録s'
     show: '詳細'
     edit: '編集'
     destroy: '削除'
@@ -17,7 +17,7 @@ ja:
       updated: "%{item}を更新しました。"
       destroyed: "%{item}を削除しました。"
       destroy_confirm: "%{item}を削除してもよろしいですか。"
-      error: 'エラーが発生しています。'
+      login_error: 'ログインに失敗しました。'
   users:
     new:
       to_login_page: 'ログインページへ'

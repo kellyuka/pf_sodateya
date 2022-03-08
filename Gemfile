@@ -42,7 +42,7 @@ gem 'carrierwave', '~> 2.0'
 gem 'sorcery'
 gem 'rails-i18n'
 gem 'materialize-sass', '~> 1.0.0'
-gem 'material_icons' 
+gem 'material_icons'
 gem 'jquery-rails'
 
 group :development, :test do
