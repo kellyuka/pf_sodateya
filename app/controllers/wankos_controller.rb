@@ -54,6 +54,6 @@ class WankosController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def wanko_params
-    params.require(:wanko).permit(:name, :picture, :picture_cache)
+    params.require(:wanko).permit(:name, :description,:picture, :picture_cache)
   end
 end

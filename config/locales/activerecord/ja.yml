@@ -14,6 +14,7 @@ ja:
         id: 'ID'
         name: '名前'
         picture: '画像'
+        description: '詳細'
       submit:
       create: 登録
       submit: 保存する

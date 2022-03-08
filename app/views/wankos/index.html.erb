@@ -1,29 +1,26 @@
-<h1><%=t('defaults.title.index', item: Wanko.model_name.human)%></h1>      
+<h1 class= "light-green-text valign-wrapper">
+<%=t('defaults.title.index', item: Wanko.model_name.human)%>
+</h1>
+<div class="row">
+  <% @wankos.each do |wanko| %>
+    <div class="card col s3 offset-s1">
+      <div class="card-image col s8 push-s2">
+        <%=image_tag wanko.picture_url class:"activator"%>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4 col s11">
+        <%=wanko.name%><i class="material-icons right col s1">more_vert</i>
+        <%= link_to t('defaults.show'), wanko %>
+        <%= link_to t('defaults.edit'), edit_wanko_path(wanko) %>
+        <%= link_to t('defaults.destroy'), wanko, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: Wanko.model_name.human) } %>
+        </span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%=wanko.name%><i class="material-icons right">close</i></span>
+        <p><%=wanko.description%></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to t('defaults.title.new', item: Wanko.model_name.human), new_wanko_path,class:"btn" %>
 
-<table>
-  <thead>
-    <tr>
-    <th><%=Wanko.human_attribute_name(:id)%></th>
-      <th><%=Wanko.human_attribute_name(:name)%></th>
-      <th><%=Wanko.human_attribute_name(:picture)%></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @wankos.each do |wanko| %>
-      <tr>
-        <td><%= wanko.id %></td>
-        <td><%= wanko.name %></td>
-        <td><%= image_tag wanko.picture_url , size: '100x100'%></td>
-        <td><%= link_to t('defaults.show'), wanko %></td>
-        <td><%= link_to t('defaults.edit'), edit_wanko_path(wanko) %></td>
-        <td><%= link_to t('defaults.destroy'), wanko, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: Wanko.model_name.human) } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to t('defaults.title.new', item: Wanko.model_name.human), new_wanko_path %>

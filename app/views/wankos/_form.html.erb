@@ -1,17 +1,22 @@
-<%= form_with(model: wanko, local: true) do |form| %>
-<%= render 'shared/errors' ,object:@wanko %>
-<div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<%= form_with(model: wanko, local: true) do |f| %>
+  <%= render 'shared/errors' ,object:@wanko %>
+  <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture , accept: 'image/*'%>
-    <%= form.hidden_field :picture_cache %>
+    <%= f.label :picture %>
+    <%= f.file_field :picture , accept: 'image/*'%>
+    <%= f.hidden_field :picture_cache %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field center-align">
+    <%= f.submit class:"btn "%>
   </div>
 <% end %>
