@@ -32,5 +32,16 @@
   <% end %>
   <%= link_to t('defaults.back'), users_path,class:"btn blue-grey" %>
 </div>
-<a id="scale-demo-trigger" href="#!" class="btn right">Toggle Scale</a>
-<a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition"><i class="material-icons">add</i></a>
+<div class="fixed-action-btn" onclick="btn1();">
+    <a id="menu" class="btn-large btn-floating waves-effect waves-light"><i class="material-icons">help</i></a>
+</div>
+<div class="tap-target light-green lighten-2" data-target="menu">
+    <div class="tap-target-content">
+        <div class= "row teal-text text-darken-4">
+        <h5 class= "col s12 offset-s3 offset-l1">新規登録</h5>
+        <p>ログインするとわんこをコレクションできます</p>
+        <p>メールを送ることはないので</p>
+        <p>適当なメルアドでも大丈夫ですよ！</p>
+        </div>
+    </div>
+</div>
