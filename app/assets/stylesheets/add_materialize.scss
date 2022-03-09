@@ -11,9 +11,10 @@ main {
 	background-size: cover;
           }
 //表彰状カード
-.card-content {
+.awards .card-content {
 	background-image: url("frame_hyousyoujyou.jpeg");
 	background-position: center;
+	background-size: cover;
 }
 .page-footer a {
 	@extend .grey-text;

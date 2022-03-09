@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sodateya</title>
+    <title>SPDATEYA</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'%>
   </head>
-<body>
-  <header>
-    <%= render 'shared/header'%> 
-  </header>
-  <main>
-    <div class="container">
-      <%= render 'shared/flash_message'%>
-      <%= yield %>
-    </div>
-  </main>
-  <footer>
-    <%= render 'shared/footer'%> 
-  </footer>
-</body>
+  <body>
+    <header>
+      <%= render 'shared/header'%> 
+    </header>
+    <main>
+    <!--main-->
+      <div class="container">
+        <%= render 'shared/flash_message'%>
+        <%= yield %>
+      </div>
+    <!--END main-->
+    </main>
+    <footer>
+      <%= render 'shared/footer'%> 
+    </footer>
+  </body>
 </html>

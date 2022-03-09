@@ -1,7 +1,5 @@
 <h1 class= "light-green-text valign-wrapper">
 <%=t('defaults.title.edit', item: Wanko.model_name.human)%>
 </h1>      
-
 <%= render 'form', wanko: @wanko %>
-
 <%= link_to t('defaults.back'), wankos_path ,class:"btn  blue-grey"%>

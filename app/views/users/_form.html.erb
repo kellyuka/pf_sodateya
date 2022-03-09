@@ -1,0 +1,23 @@
+<%= form_with(model: user, local: true) do |form| %>
+	<%= render 'shared/errors' ,object:user %>
+	<div class="input-field">
+		<%= form.label :email%>
+		<%= form.text_field :email ,class:"validate"%>
+	</div>
+	<div class="input-field">
+		<%= form.label :name %>
+		<%= form.text_field :name %>
+	</div>
+	<div class="input-field">
+		<%= form.label :password %>
+		<%= form.password_field :password %>
+	</div>
+	<div class="input-field">
+		<%= form.label :password_confirmation %>
+		<%= form.password_field :password_confirmation %>
+	</div>
+	<br>
+	<div class="input-field center-align">
+		<%= form.submit class:"btn-large" %>
+	</div>
+<% end %>

@@ -1,6 +1,10 @@
 <h1 class= "light-green-text valign-wrapper">
 <%=t('defaults.title.index', item: Wanko.model_name.human)%>
 </h1>
+<div class="center-align">
+  <%= link_to t('defaults.title.new', item: Wanko.model_name.human), new_wanko_path,class:"btn" %>
+</div>
+<br>
 <div class="row">
   <% @wankos.each do |wanko| %>
     <div class="card col s3 offset-s1">
@@ -22,5 +26,3 @@
     </div>
   <% end %>
 </div>
-<%= link_to t('defaults.title.new', item: Wanko.model_name.human), new_wanko_path,class:"btn" %>
-

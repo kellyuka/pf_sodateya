@@ -11,7 +11,7 @@
 				<ul>
 					<li><%=link_to "利用規約",page_path('teams')%></li>
 					<li><%=link_to "プライバシーポリシー",page_path('privacy_policy')%></li>
-					<li><a href="https://github.com/kellyuka/pf_sodateya" target='_blank'>Git hub</a></li>
+					<li><%=link_to "Git Hub","https://github.com/kellyuka/pf_sodateya",target:'_blank'%></li>
 				</ul>
 			</div>
 		</div>
@@ -19,13 +19,9 @@
 	<div class="footer-copyright">
 		<div class="container">
 			©Copyright 2022 SODATEYA
-			
-			<div class= "right">
-				<a>creator:KELLY</a>
-				<%=link_to "https://twitter.com/gloomy_yuka" ,target:'_blank' do%>
-				<i class="fa fa-twitter"></i>
-				<%end%>
-			</div>
+			<%=link_to "https://twitter.com/gloomy_yuka", target:'_blank', class:"right" do%>
+			creator: KELLY<i class="fa fa-twitter"></i>
+			<%end%>
 		</div>
 	</div>
 </footer>

@@ -1,12 +1,8 @@
 class CollectionsController < ApplicationController
-  def new
-    @wanko = Wanko.new
-    @collection = Collection.new
-  end
-
   def create
     @wanko = Wanko.find(params[:wanko_id])
     current_user.collection(@wanko)
+    @count = current_user.collections.count
   end
 
   def index

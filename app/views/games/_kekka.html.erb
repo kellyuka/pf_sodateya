@@ -1,19 +1,20 @@
 <div id = "kekka-detail" class="center-align">
-    <p>つまりあなたのわんちゃんは...</p>
-    <h4><%=@wanko.name%></h4>
-    <%= image_tag @wanko.picture_url , size: '200x200'%>
-    <br>
-    <%if logged_in?%>
-        <%if current_user.collection?(@wanko)%>
-            <%=render 'nocollectionbutton', wanko:@wanko%>  
-        <%else%>
-            <%=render 'collectionbutton', wanko:@wanko%>
-        <%end%>
-        <br>
-        <%=link_to "https://twitter.com/share?url=#{request.url}/&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank' do %>
-        <i class="fa fa-twitter"></i><%="twitterでシェアする"%>
-        <%end%>
-    <%else%>
-        <%= link_to "コレクションを始める？",login_path ,class:"btn"%>
-    <%end%>
+	<p>つまりあなたのわんちゃんは...</p>
+	<h4><%=@wanko.name%></h4>
+	<%= image_tag @wanko.picture_url , size: '180x180'%>
+	<br>
+	<%if logged_in?%>
+		<%if current_user.collection?(@wanko)%>
+			<%=render 'nocollectionbutton',wanko:@wanko,count:@count%>  
+		<%else%>
+			<%=render 'collectionbutton', wanko:@wanko%>
+		<%end%>
+	<%else%>
+		<%= link_to "コレクションを始める？",login_path ,class:"btn"%>
+		<br>
+		<br>
+		<%=link_to "https://twitter.com/share?url=#{request.url}/&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank',class:"btn blue" do %>
+		<%="twitterでシェアする"%><i class="fa fa-twitter "></i>
+		<%end%>
+	<%end%>
 </div>

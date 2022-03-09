@@ -1,6 +1,6 @@
 ja:
   defaults:
-    register: '登録s'
+    register: '登録'
     show: '詳細'
     edit: '編集'
     destroy: '削除'
@@ -11,7 +11,7 @@ ja:
       new: "%{item}登録"
       edit: "%{item}編集"
       show: "%{item}詳細"
-      index: "%{item}一覧"
+      index: "%{item}たち"
     message:
       created: "%{item}を作成しました。"
       updated: "%{item}を更新しました。"
@@ -20,7 +20,10 @@ ja:
       login_error: 'ログインに失敗しました。'
   users:
     new:
+      title: '新規登録'
       to_login_page: 'ログインページへ'
+    index:
+      title: '遊んでくれた人たち'
   user_sessions:
     new:
       to_register_page: '登録ページへ'
@@ -29,3 +32,4 @@ ja:
       login: 'ログインしました。'
     destroy:
       logout: 'ログアウトしました。'
+  

@@ -1,10 +1,8 @@
 class GamesController < ApplicationController
-  def top
-    @wanko = Wanko.new
-  end
+  def top; end
 
   def search
-    case 
+    case
     when params[:gohan_data].to_i  == 0 && params[:ohuro_data].to_i  == 0 && params[:sanpo_data].to_i == 0 && params[:sleep_data].to_i == 0
       @wanko = Wanko.find(9)
     when params[:gohan_data].to_i > 4
@@ -24,10 +22,12 @@ class GamesController < ApplicationController
     else
       @wanko = Wanko.find(8)
     end
+    @count = current_user.collections.count if logged_in?
   end
 
   def sugosugi
     @collections = current_user.collections
     @wanko = Wanko.find(10)
+    @count = current_user.collections.count
   end
 end

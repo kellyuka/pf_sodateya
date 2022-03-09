@@ -1,8 +1,7 @@
 <h1 class= "col l10 light-green-text valign-wrapper">
-<i class="medium material-icons">collections_bookmark</i>
-コレクション
+  <i class="medium material-icons">collections_bookmark</i>
+  <%=Collection.model_name.human%>
 </h1>
-
 <div class= "center-align">
   <%if current_user.collections.count > 9%>
     <%=link_to "表彰式へ",games_sugosugi_path, class:"btn-large"%>
@@ -27,4 +26,3 @@
     </div>
   <% end %>
 </div>
-

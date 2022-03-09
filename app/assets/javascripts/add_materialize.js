@@ -16,6 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //ヘルプページ
-function btn1(){
+function helpbtn(){
             Instances[0].open();
 }

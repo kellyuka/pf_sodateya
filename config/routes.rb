@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :wankos do
     resources :collections, only: %i[create]
   end
-  resources :collections
+  resources :collections, only: %i[index]
 end
