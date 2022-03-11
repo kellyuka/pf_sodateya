@@ -2,9 +2,12 @@
 
 class WankosController < ApplicationController
   before_action :set_wanko, only: %i[show edit update destroy]
+  before_action :require_login, only: [:new, :destroy]
+  before_action :require_admin
 
   # GET /wankos
   def index
+
     @wankos = Wanko.all
   end
 
@@ -54,6 +57,6 @@ class WankosController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def wanko_params
-    params.require(:wanko).permit(:name, :description,:picture, :picture_cache)
+    params.require(:wanko).permit(:name, :description, :picture, :picture_cache)
   end
 end

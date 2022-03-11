@@ -10,33 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_071521) do
-
-  create_table "collections", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "wanko_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_collections_on_user_id"
-    t.index ["wanko_id"], name: "index_collections_on_wanko_id"
+ActiveRecord::Schema.define(version: 20_220_309_011_919) do
+  create_table 'collections', force: :cascade do |t|
+    t.integer 'user_id'
+    t.integer 'wanko_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_collections_on_user_id'
+    t.index ['wanko_id'], name: 'index_collections_on_wanko_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "crypted_password"
-    t.string "salt"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'email', null: false
+    t.string 'crypted_password'
+    t.string 'salt'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'role', default: 0, null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
   end
 
-  create_table "wankos", force: :cascade do |t|
-    t.string "name"
-    t.string "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "description"
+  create_table 'wankos', force: :cascade do |t|
+    t.string 'name'
+    t.string 'picture'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'description'
   end
-
 end

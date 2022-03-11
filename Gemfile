@@ -39,12 +39,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'carrierwave', '~> 2.0'
-gem 'sorcery'
-gem 'rails-i18n'
-gem 'materialize-sass', '~> 1.0.0'
-gem 'material_icons'
-gem 'jquery-rails'
+gem 'enum_help'
 gem 'high_voltage'
+gem 'jquery-rails'
+gem 'material_icons'
+gem 'materialize-sass', '~> 1.0.0'
+gem 'rails-i18n'
+gem 'sorcery'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

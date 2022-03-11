@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
+  before_action :require_admin, only: %i[destroy]
 
   # GET /users
   def index
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: t('defaults.message.updated', item: User.model_name.human)
+      redirect_to root_path, notice: t('defaults.message.updated', item: User.model_name.human)
     else
       render :edit
     end
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: t('defaults.message.destroyed', item: User.model_name.human)
+    redirect_to root_path, notice: t('defaults.message.destroyed', item: User.model_name.human)
   end
 
   private

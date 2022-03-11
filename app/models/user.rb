@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :collections, dependent: :destroy
   has_many :collections_wankos, through: :collections, source: :wanko
-
+  enum role: { general: 0, admin: 1 }
 
   def collection(wanko)
     collections_wankos << wanko

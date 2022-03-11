@@ -1,4 +1,6 @@
 class CollectionsController < ApplicationController
+  before_action :require_login
+
   def create
     @wanko = Wanko.find(params[:wanko_id])
     current_user.collection(@wanko)

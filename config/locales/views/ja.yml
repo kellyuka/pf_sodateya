@@ -18,6 +18,9 @@ ja:
       destroyed: "%{item}を削除しました。"
       destroy_confirm: "%{item}を削除してもよろしいですか。"
       login_error: 'ログインに失敗しました。'
+      require_login: 'ログインしてください。'
+      require_admin: '権限がありません。'
+
   users:
     new:
       title: '新規登録'
