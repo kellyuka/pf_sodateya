@@ -2,12 +2,11 @@
 
 class WankosController < ApplicationController
   before_action :set_wanko, only: %i[show edit update destroy]
-  before_action :require_login, only: [:new, :destroy]
+  before_action :require_login, only: %i[new destroy]
   before_action :require_admin
 
   # GET /wankos
   def index
-
     @wankos = Wanko.all
   end
 
