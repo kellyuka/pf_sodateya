@@ -1,16 +1,20 @@
-<h1><%=t('defaults.login')%></h1>      
+<h1 class= "light-green-text valign-wrapper">
+  <i class="medium material-icons">check_circle</i>
+  <%=t('defaults.login')%>
+</h1>      
 <%= form_with url: login_path, method: :post ,local: true do |f| %>
-  <div class="field">
+  <div class="input-field">
     <%= f.label :email ,User.human_attribute_name(:email)%><br />
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="input-field">
     <%= f.label :password, User.human_attribute_name(:password) %><br />
     <%= f.password_field :password %>
   </div>
-  <div class="actions">
-    <%= f.submit t('defaults.login') %>
+  <br>
+  <div class="input-field center-align">
+    <%= f.submit t('defaults.login'),class:"btn-large" %>
   </div>
 <% end %>
-<%= link_to t('defaults.back'), users_path %>
-<%= link_to t('.to_register_page'), new_user_path %>
+<%= link_to t('defaults.back'), users_path,class:"btn blue-grey" %>
+<%= link_to t('.to_register_page'), new_user_path, class:"btn" %>

@@ -5,14 +5,18 @@ body {
 	flex-direction: column;
           }
 main {
-	flex: 1 0 auto;
-          }
-//noharaサイズ拡張
-.parallax-container {
 	height: auto;
+	flex: 1 0 auto;
+	background-image: url("nohara.jpg");
+	background-size: cover;
+          }
+//表彰状カード
+.awards .card-content {
+	background-image: url("frame_hyousyoujyou.jpeg");
+	background-position: center;
+	background-size: cover;
 }
-.parallax-container .container{
-	height: 700px;
-	min-height: 100px;
-
+.page-footer a {
+	@extend .grey-text;
+	@extend .text-lighten-3;
 }

@@ -1,28 +1,28 @@
-<h1><%=t('defaults.title.index', item: User.model_name.human)%></h1> 
-
-<table>
-  <thead>
-    <tr>
-      <th><%=User.human_attribute_name(:email)%></th>
-      <th><%=User.human_attribute_name(:name)%></th>
-      
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= user.name %></td>
-        <td><%= link_to t('defaults.show'), user %></td>
-        <td><%= link_to t('defaults.edit'), edit_user_path(user) %></td>
-        <td><%= link_to t('defaults.destroy'), user, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: User.model_name.human) } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to t('defaults.title.new', item: User.model_name.human), new_user_path %>
+<h1 class= "light-green-text valign-wrapper">
+  <i class="medium material-icons">people</i>
+  <%=t('.title')%>
+</h1> 
+<div class="row">
+  <div class ="col s8 offset-s2">
+    <table class="centered teal-text text-darken-4">
+      <thead>
+        <tr>
+          <th><h5><%=User.human_attribute_name(:name)%></h5></th>
+          <th><h5><%=User.human_attribute_name(:collections)%></h5></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><h5><%=user.name%></h5></td>
+            <td><h5><%= user.collections.count %>個</h5></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <br>
+  <div class="center-align">
+    <%= link_to t('defaults.login'), '/login', method: :get, class:"btn-large"%>
+  </div>
+</div>

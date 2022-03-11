@@ -1,33 +1,34 @@
 class GamesController < ApplicationController
-  def top
-    @wanko = Wanko.new
-  end
+  before_action :require_login, only: %i[sugosugi]
+
+  def top; end
 
   def search
-    case 
-    when params[:gohan_data].to_i  == 0 && params[:ohuro_data].to_i  == 0 && params[:sanpo_data].to_i == 0 && params[:sleep_data].to_i == 0 then 
+    if params[:gohan_data].to_i == 0 && params[:ohuro_data].to_i == 0 && params[:sanpo_data].to_i == 0 && params[:sleep_data].to_i == 0
       @wanko = Wanko.find(9)
-    when params[:gohan_data].to_i > 4 then
-      @wanko = Wanko.find(1)
-    when params[:ohuro_data].to_i > 2 then
+    elsif params[:gohan_data].to_i > 4
       @wanko = Wanko.find(2)
-    when params[:sleep_data].to_i > 4 then
-      @wanko = Wanko.find(3)
-    when params[:gohan_data].to_i < 2 then
+    elsif params[:ohuro_data].to_i > 2
       @wanko = Wanko.find(4)
-    when params[:ohuro_data].to_i < 1 then
-      @wanko = Wanko.find(5)
-    when params[:sanpo_data].to_i < 1 then
-      @wanko = Wanko.find(6)
-    when params[:sleep_data].to_i < 3 then
+    elsif params[:sleep_data].to_i > 4
       @wanko = Wanko.find(7)
+    elsif params[:gohan_data].to_i < 2
+      @wanko = Wanko.find(1)
+    elsif params[:ohuro_data].to_i < 1
+      @wanko = Wanko.find(3)
+    elsif params[:sanpo_data].to_i < 1
+      @wanko = Wanko.find(5)
+    elsif params[:sleep_data].to_i < 3
+      @wanko = Wanko.find(6)
     else
       @wanko = Wanko.find(8)
     end
+    @count = current_user.collections.count if logged_in?
   end
 
-  def complete
+  def sugosugi
     @collections = current_user.collections
     @wanko = Wanko.find(10)
+    @count = current_user.collections.count
   end
 end

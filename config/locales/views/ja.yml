@@ -11,16 +11,22 @@ ja:
       new: "%{item}登録"
       edit: "%{item}編集"
       show: "%{item}詳細"
-      index: "%{item}一覧"
+      index: "%{item}たち"
     message:
       created: "%{item}を作成しました。"
       updated: "%{item}を更新しました。"
       destroyed: "%{item}を削除しました。"
       destroy_confirm: "%{item}を削除してもよろしいですか。"
-      error: 'エラーが発生しています。'
+      login_error: 'ログインに失敗しました。'
+      require_login: 'ログインしてください。'
+      require_admin: '権限がありません。'
+
   users:
     new:
+      title: '新規登録'
       to_login_page: 'ログインページへ'
+    index:
+      title: '遊んでくれた人たち'
   user_sessions:
     new:
       to_register_page: '登録ページへ'
@@ -29,3 +35,4 @@ ja:
       login: 'ログインしました。'
     destroy:
       logout: 'ログアウトしました。'
+  

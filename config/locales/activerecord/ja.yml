@@ -7,13 +7,15 @@ ja:
     attributes:
       user:
         email: 'メールアドレス'
-        name: '名前'
+        name: 'おなまえ'
         password: 'パスワード'
-        password_confirmation: 'パスワード確認'
+        password_confirmation: 'パスワード(確認)'
+        collections: 'コレクション'
       wanko:
         id: 'ID'
         name: '名前'
         picture: '画像'
+        description: '詳細'
       submit:
       create: 登録
       submit: 保存する

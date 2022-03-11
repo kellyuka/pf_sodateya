@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[edit update destroy]
+  before_action :require_admin, only: %i[destroy]
 
   # GET /users
   def index
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: t('defaults.message.created', item: User.model_name.human)
+      redirect_to login_path, notice: t('defaults.message.created', item: User.model_name.human)
     else
       render :new
     end
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: t('defaults.message.updated', item: User.model_name.human)
+      redirect_to root_path, notice: t('defaults.message.updated', item: User.model_name.human)
     else
       render :edit
     end
@@ -42,14 +43,14 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: t('defaults.message.destroyed', item: User.model_name.human)
+    redirect_to root_path, notice: t('defaults.message.destroyed', item: User.model_name.human)
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # Only allow a trusted parameter "white list" through.

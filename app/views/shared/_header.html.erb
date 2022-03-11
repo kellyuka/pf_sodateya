@@ -1,18 +1,24 @@
 <!-- header-->
 <nav>
-<div class="nav-wrapper">
-  <div class="row">
-    <a href="/" class="brand-logo"><i class="material-icons">sunny</i>SODATEYA</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-    <% if logged_in?%>
-      <li><%= link_to "コレクション一覧", collections_path %></li>
-      <li><%= link_to "プロフィール", edit_user_path(current_user.id) %> </li>
-      <li><%= link_to "ログアウト", '/logout', method: :post %></li>
-    <% else %>
-      <li><%= link_to "ログイン", '/login', method: :get %></li>
-    <% end %>
-    </ul>
+  <div class="nav-wrapper">
+    <div class="row">
+      <div class="col offset-s1">
+        <%=link_to "/",class:"brand-logo" do %>
+          <div class="valign-wrapper">
+            <%= image_tag 'mark_dog',size:'35x35' %>&nbsp;S O D A T E Y A
+          </div>
+        <%end%>
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if logged_in?%>
+          <li><%= link_to "MY COLLECTION", collections_path %></li>
+          <li><%= link_to "PROFILE", edit_user_path %> </li>
+          <li><%= link_to "LOGOUT", '/logout', method: :post %></li>
+        <% else %>
+          <li><%= link_to "LOGIN", '/login', method: :get %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
 </nav>
 <!--END header-->
