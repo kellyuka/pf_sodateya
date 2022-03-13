@@ -1,5 +1,5 @@
 <div class="row top-description">
-	<h1 class= "col l10 light-green-text">S O D A T E Y A</h1>
+	<h1 class= "light-green-text">S O D A T E Y A</h1>
 	<div class="col s12 l6  teal-text text-darken-4">
 		<h5>ようこそ！</h5>
 		<h5>ライフを使ってわんちゃんを育てよう！</h5>
@@ -15,35 +15,37 @@
 	</div>
 </div>
 <div class="row osewa-wrapper">
-	<div class="osewa">
-		<%=image_tag 'dogfood',size:"130x130"%>
-		<div class="osewa-content">
-			<a>ごはん</a>
-			<button id ="js-gohan" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+	<div class="col s12 l8">
+		<div class="osewa">
+			<%=image_tag 'dogfood',size:"130x130"%>
+			<div class="osewa-content">
+				<a>ごはん</a>
+				<button id ="js-gohan" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+			</div>
+		</div>
+		<div class="osewa">
+			<%=image_tag 'bath_dog',size:"130x130"%>
+			<div class="osewa-content">
+				<a>おふろ</a>
+				<button id ="js-ohuro" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+			</div>
+		</div>
+		<div class="osewa">
+			<%=image_tag 'sanpo_dog',size:"130x130"%>
+			<div class="osewa-content">
+				<a>さんぽ</a>
+				<button id ="js-sanpo" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+			</div>
+		</div>
+		<div class="osewa">
+			<%=image_tag 'sleep_dog',size:"130x130"%>
+			<div class="osewa-content">
+				<a>ねむる</a>
+				<button id ="js-sleep" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
+			</div>
 		</div>
 	</div>
-	<div class="osewa">
-		<%=image_tag 'bath_dog',size:"130x130"%>
-		<div class="osewa-content">
-			<a>おふろ</a>
-			<button id ="js-ohuro" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
-		</div>
-	</div>
-	<div class="osewa">
-		<%=image_tag 'sanpo_dog',size:"130x130"%>
-		<div class="osewa-content">
-			<a>さんぽ</a>
-			<button id ="js-sanpo" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
-		</div>
-	</div>
-	<div class="osewa">
-		<%=image_tag 'sleep_dog',size:"130x130"%>
-		<div class="osewa-content">
-			<a>ねむる</a>
-			<button id ="js-sleep" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></button>
-		</div>
-	</div>
-	<div class="col s12 l4 push-s5 push-l1">
+	<div class="col push-l1 push-s4">
 		<div class = "osewa_finish valign-wrapper">
 			<%= form_with(url:games_search_path,method: :get,remote:true)  do |f| %>
 				<%=f.hidden_field :gohan_data,id:"submit-gohan"%>

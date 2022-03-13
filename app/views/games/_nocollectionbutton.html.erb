@@ -2,10 +2,11 @@
 <%if count < 9%>
 	<p>あと<%= 9 - count %>種類だよ！頑張って！</p>
 <%elsif count == 9%>
-	<%=link_to "表彰式へ",games_sugosugi_path, class:"btn-large"%>
+	<%=link_to "表彰式へ",games_sugosugi_path, class:"btn-large amber darken-2 "%>
 	<br>
-	<br>
+<%else%>
 <%end%>
-<%=link_to "https://twitter.com/share?url=#{request.url}/&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank',class:"btn blue" do %>
-<%="twitterでシェアする"%><i class="fa fa-twitter "></i>
+	<br>
+<%=link_to "https://twitter.com/share?url=#{'https://sodateya.herokuapp.com'}&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank',class:"btn blue" do %>
+<%='お披露目する？'%><i class="fa fa-twitter "></i>
 <%end%>
