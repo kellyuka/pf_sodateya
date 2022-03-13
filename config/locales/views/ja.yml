@@ -20,6 +20,7 @@ ja:
       login_error: 'ログインに失敗しました。'
       require_login: 'ログインしてください。'
       require_admin: '権限がありません。'
+      require_count: 'ずるしちゃダメです。'
 
   users:
     new:

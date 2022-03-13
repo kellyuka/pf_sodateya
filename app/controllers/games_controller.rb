@@ -28,7 +28,10 @@ class GamesController < ApplicationController
 
   def sugosugi
     @collections = current_user.collections
-    @wanko = Wanko.find(10)
     @count = current_user.collections.count
+    if @count < 8
+      redirect_to root_path, alert: t('defaults.message.require_count')
+    end
+    @wanko = Wanko.find(10)
   end
 end

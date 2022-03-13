@@ -2,21 +2,31 @@
 <nav>
   <div class="nav-wrapper">
     <div class="row">
-      <div class="col offset-s1">
-        <%=link_to "/",class:"brand-logo" do %>
+      <div class="col l1">
+        <%=link_to "/",class:"brand-logo col l1" do %>
           <div class="valign-wrapper">
-            <%= image_tag 'mark_dog',size:'35x35' %>&nbsp;S O D A T E Y A
+          <%= image_tag 'mark_dog',size:'35x35' %>&nbsp;SODATEYA
           </div>
         <%end%>
       </div>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if logged_in?%>
-          <li><%= link_to "MY COLLECTION", collections_path %></li>
-          <li><%= link_to "PROFILE", edit_user_path %> </li>
-          <li><%= link_to "LOGOUT", '/logout', method: :post %></li>
-        <% else %>
-          <li><%= link_to "LOGIN", '/login', method: :get %></li>
-        <% end %>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+      <% if logged_in?%>
+        <li><%= link_to "MY COLLECTION", collections_path %></li>
+        <li><%= link_to "PROFILE", edit_user_path %> </li>
+        <li><%= link_to "LOGOUT", '/logout', method: :post %></li>
+      <% else %>
+        <li><%= link_to "LOGIN", '/login', method: :get %></li>
+      <% end %>
+      </ul>
+      <ul class="sidenav" id="mobile-demo">
+      <% if logged_in?%>
+        <li><%= link_to "MY COLLECTION", collections_path %></li>
+        <li><%= link_to "PROFILE", edit_user_path %> </li>
+        <li><%= link_to "LOGOUT", '/logout', method: :post %></li>
+      <% else %>
+        <li><%= link_to "LOGIN", '/login', method: :get %></li>
+      <% end %>
       </ul>
     </div>
   </div>

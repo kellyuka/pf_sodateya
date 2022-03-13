@@ -10,11 +10,11 @@
 			<%=render 'collectionbutton', wanko:@wanko%>
 		<%end%>
 	<%else%>
-		<%= link_to "コレクションを始める？",login_path ,class:"btn"%>
+		<%= link_to "コレクションを始める？",login_path ,class:"btn-large"%>
 		<br>
 		<br>
-		<%=link_to "https://twitter.com/share?url=#{request.url}/&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank',class:"btn blue" do %>
-		<%="twitterでシェアする"%><i class="fa fa-twitter "></i>
+		<%=link_to "https://twitter.com/share?url=#{'https://sodateya.herokuapp.com'}&text=あなたのわんちゃんは#{ @wanko.name }です！/&hashtags=SODATEYA,RUNTEQ", target: '_blank',class:"btn blue" do %>
+		<%='お披露目する？'%><i class="fa fa-twitter "></i>
 		<%end%>
 	<%end%>
 </div>
