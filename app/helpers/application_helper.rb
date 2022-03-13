@@ -12,10 +12,10 @@ module ApplicationHelper
       twitter_card[:url] = 'https://sodateya.herokuapp.com/'
       twitter_card[:title] = 'SODATEYA'
       twitter_card[:description] = 'あなたもわんちゃんを育ててみよう！'
-      twitter_card[:image] = 'https://sodateya.herokuapp.com/assets/images/twitter-card.png'      
-      twitter_card[:card] = 'summary'
-      twitter_card[:site] = '@gloomy_yuka'
-      twitter_card
+      twitter_card[:image] = asset_url('twitter-card.png')
     end
+    twitter_card[:card] = 'summary'
+    twitter_card[:site] = '@gloomy_yuka'
+    twitter_card
   end 
 end
