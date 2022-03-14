@@ -7,6 +7,7 @@
     <table class="centered teal-text text-darken-4">
       <thead>
         <tr>
+          <th></th>
           <th><h5><%=User.human_attribute_name(:name)%></h5></th>
           <th><h5><%=User.human_attribute_name(:collections)%></h5></th>
           <th colspan="3"></th>
@@ -15,6 +16,9 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
+          <%if logged_in? && current_user.admin?%>
+            <td><%= link_to t('defaults.destroy'), user, method: :delete, data: { confirm: t('defaults.message.destroy_confirm', item: User.model_name.human) } %></td>
+          <%end%>
             <td><h5><%=user.name%></h5></td>
             <td><h5><%= user.collections.count %>個</h5></td>
           </tr>

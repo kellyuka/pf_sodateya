@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[edit update destroy]
+  before_action :set_user, only: %i[edit update]
   before_action :require_admin, only: %i[destroy]
 
   # GET /users
@@ -42,8 +42,9 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    redirect_to root_path, notice: t('defaults.message.destroyed', item: User.model_name.human)
+    @user = User.find(params[:id])
+    @user.destroy!
+    redirect_to users_path, notice: t('defaults.message.destroyed', item: User.model_name.human)
   end
 
   private

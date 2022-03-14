@@ -51,7 +51,7 @@ Wanko.create!(
     },
     {
       name: '夢遊するわんこ',
-      picture: File.open('./app/assets/images/sleep_dog.png'),
+      picture: File.open('./app/assets/images/sleeprun_dog.png'),
       description: 'ねすぎるとねながら走るみたいです。おうちの中なら大惨事でしょう。'
     },
     {
